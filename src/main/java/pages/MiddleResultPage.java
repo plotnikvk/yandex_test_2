@@ -7,20 +7,20 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Stash;
 
-public class MiddleResultPage extends BasePage {
+class MiddleResultPage extends BasePage {
 public  String item;
 
-    public MiddleResultPage (){
+    MiddleResultPage (){
         driver = Stash.getDriver();
         PageFactory.initElements(driver,this);
         wait = new WebDriverWait(driver,3);
     }
 
     @FindBy(xpath = "//div")
-    public WebElement electronicsMenu;
+    private WebElement electronicsMenu;
 
     @FindBy(xpath = "//a[(text()='Перейти ко всем фильтрам')]")
-    public WebElement goToAllFilters;
+    private WebElement goToAllFilters;
 
 public SettingsPage selectElectronicsItem(String item){
     electronicsMenu.findElement(By.xpath("//div[@class='catalog-menu__list']/a[@class='link catalog-menu__list-item " +

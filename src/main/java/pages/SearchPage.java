@@ -14,16 +14,16 @@ import utils.Stash;
  * Created by plotnikvk
  */
 
-public class SearchPage extends BasePage{
+class SearchPage extends BasePage{
 
-    public SearchPage (){
+    SearchPage (){
         driver = Stash.getDriver();
         PageFactory.initElements(driver,this);
         wait = new WebDriverWait(driver,3);
     }
 
     @FindBy(xpath = "//div[@class='topmenu i-bem topmenu_margin-bottom_no topmenu_js_inited']")
-    WebElement mainMenu;
+    private WebElement mainMenu;
 
     public MiddleResultPage selectMainMenu(String itemName){
         mainMenu.findElement(By.xpath(".//a[@class='link topmenu__link'][contains(text(),'"+itemName+"')]")).click();

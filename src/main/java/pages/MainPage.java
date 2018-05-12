@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Stash;
 
-public class MainPage extends BasePage {
+ class MainPage extends BasePage {
     public MainPage(){
         driver = Stash.getDriver();
         PageFactory.initElements(driver,this);
@@ -14,7 +14,7 @@ public class MainPage extends BasePage {
     }
 
     @FindBy(xpath = "//a[@data-id='market']")
-    public WebElement marketLink;
+    private WebElement marketLink;
 
     public SearchPage marketClick(){
         marketLink.click();//Переходим в "Яндекс Маркет"

@@ -13,34 +13,34 @@ import utils.Stash;
  * Created by plotnikvk .
  */
 
-public class SearchResultByPosition extends BasePage {
+class SearchResultByPosition extends BasePage {
 
-    public SearchResultByPosition() {
+    SearchResultByPosition() {
         driver = Stash.getDriver();
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//div[@class='n-snippet-card2__title']/a")
-    List<WebElement> result;
+    private List<WebElement> result;
 
     @FindBy(xpath = "//div[@class='n-snippet-cell2__title']/a")
-    List<WebElement> result2;
+    private List<WebElement> result2;
 
     @FindBy(xpath = "//input[@id='header-search']")
-    public WebElement searchWindow;
+    private WebElement searchWindow;
 
     @FindBy(xpath = "//span[text()='Найти']/ancestor::button")
-    public WebElement searchButton;
+    private WebElement searchButton;
 
     @FindBy(xpath = "//div[@class='n-title__text']//h1")
-    public WebElement searchedElement;
+    private WebElement searchedElement;
 
 
 
     //Выбираем 1 элемент из коллекции в 12 элементов, которую получаем по ссылке
     public void chooseItemByPositionAndSearchAndCheck(int position, String value)
     {
-        if(value=="Т") {
+        if(value.equals("Т")) {
             Asserts.check(true, String.valueOf(result.size()), 12);//Проверяем что элементов 12
             String Item = result.get(position - 1).getText();//Запоминаем позицию из коллекции
             searchWindow.sendKeys(Item);//Ищем товар по запомненному значению

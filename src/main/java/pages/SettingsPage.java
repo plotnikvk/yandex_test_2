@@ -9,28 +9,28 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Stash;
 
-public class SettingsPage extends BasePage {
+ class SettingsPage extends BasePage {
 
-    public SettingsPage(){
+    SettingsPage(){
         driver = Stash.getDriver();
         PageFactory.initElements(driver,this);
         wait = new WebDriverWait(driver,3);
     }
 
     @FindBy(xpath = "//input[@name='glf-pricefrom-var']")
-    public WebElement priceWindow;
+    private WebElement priceWindow;
 
     @FindBy(xpath = "//div")
-    public WebElement manufacturerItem;
+    private WebElement manufacturerItem;
 
     @FindBy(xpath = "//span[text()='Показать подходящие']//ancestor::a[@role='button']")
-    public WebElement showMe;
+    private WebElement showMe;
 
     @FindBy(xpath = "//span[text()='Показывать по 48']//ancestor::button[@role='listbox']")
-    public WebElement showBy48;
+    private WebElement showBy48;
 
     @FindBy(xpath = "//span[@class ='select__text' and contains(text(),'Показывать по 12')]")
-    public WebElement showBy12;
+    private WebElement showBy12;
 
     public SearchResultByPosition selectFilters(String price,String manufacturers){
         priceWindow.sendKeys(price);
