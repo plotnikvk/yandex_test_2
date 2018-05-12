@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
-import pages.SearchPage;
+
+import pages.MainPage;
 import utils.Stash;
 
 /**
@@ -34,8 +35,20 @@ public class YandexTest {
 
     @Test
     public void test(){
-        new SearchPage().
-                searchFinalPage();
-
+        new MainPage()
+                .marketClick()
+                .selectMainMenu("Электроника")
+                .selectElectronicsItem("Телевизоры")
+                .selectFilters("20000","LG","Samsung")
+                .chooseItemByPositionAndSearchAndCheck(1,"Т");
+    }
+    @Test
+    public void test2(){
+        new MainPage()
+                .marketClick()
+                .selectMainMenu("Электроника")
+                .selectElectronicsItem("Наушники")
+                .selectFilters("5000","Sennheiser")
+                .chooseItemByPositionAndSearchAndCheck(1,"Н");
     }
 }
