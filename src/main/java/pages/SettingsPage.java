@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Stash;
 
- class SettingsPage extends BasePage {
+public class SettingsPage extends BasePage {
 
     SettingsPage(){
         driver = Stash.getDriver();

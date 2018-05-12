@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Stash;
 
- class MainPage extends BasePage {
+ public class MainPage extends BasePage {
     public MainPage(){
         driver = Stash.getDriver();
         PageFactory.initElements(driver,this);

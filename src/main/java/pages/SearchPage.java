@@ -14,7 +14,7 @@ import utils.Stash;
  * Created by plotnikvk
  */
 
-class SearchPage extends BasePage{
+public class SearchPage extends BasePage{
 
     SearchPage (){
         driver = Stash.getDriver();

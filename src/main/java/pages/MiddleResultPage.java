@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Stash;
 
-class MiddleResultPage extends BasePage {
+public class MiddleResultPage extends BasePage {
 public  String item;
 
     MiddleResultPage (){

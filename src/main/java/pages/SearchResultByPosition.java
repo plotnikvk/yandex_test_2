@@ -13,7 +13,7 @@ import utils.Stash;
  * Created by plotnikvk .
  */
 
-class SearchResultByPosition extends BasePage {
+public  class SearchResultByPosition extends BasePage {
 
     SearchResultByPosition() {
         driver = Stash.getDriver();
@@ -40,7 +40,7 @@ class SearchResultByPosition extends BasePage {
     //Выбираем 1 элемент из коллекции в 12 элементов, которую получаем по ссылке
     public void chooseItemByPositionAndSearchAndCheck(int position, String value)
     {
-        if(value.equals("Т")) {
+        if(value=="Т") {
             Asserts.check(true, String.valueOf(result.size()), 12);//Проверяем что элементов 12
             String Item = result.get(position - 1).getText();//Запоминаем позицию из коллекции
             searchWindow.sendKeys(Item);//Ищем товар по запомненному значению
